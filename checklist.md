@@ -1,14 +1,14 @@
 Planning
 
-[ ] Copy this list into your project
-[ ] Outline functionality of your app
-[ ] Draw what the user will see
-[ ] Break out components from your sketch
-[ ] Name your components
-[ ] Draw component hierarchy
-[ ] Label where you will require functions that change state
-[ ] Label where you will require data
-[ ] Determine from this where you will require state & hold functions
+[x] Copy this list into your project
+[x] Outline functionality of your app
+[x] Draw what the user will see
+[x] Break out components from your sketch
+[x] Name your components
+[x] Draw component hierarchy
+[x] Label where you will require functions that change state
+[x] Label where you will require data
+[ x Determine from this where you will require state & hold functions
 
 Setup
 
