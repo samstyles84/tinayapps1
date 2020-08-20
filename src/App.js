@@ -1,29 +1,36 @@
-import React from 'react';
-import './App.css';
-import AddTask from './components/addTask';
+import React from "react";
+import "./App.css";
+import AddTask from "./components/addTask";
+import TaskList from "./components/taskList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>To Do List</h1>
-      </header>
+class App extends React.Component {
+  state = {
+    tasks: [],
+  };
+  render = () => {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <h1>To Do List</h1>
+        </header>
 
-      <main>
-        <br />
-        <AddTask />
-        <ol>
-          <li>
-            Task 1 ,due:{} ({} days). priority,{}
-          </li>
-          {/* <li>Task 1 ,due:{dueDate} ({timeLeft} days). priority,{priority}</li> */}
-        </ol>
-        <form action="">
-          <button>Remove checked tasks</button>
-        </form>
-      </main>
-    </div>
-  );
+        <main>
+          <br />
+          <AddTask addTask={this.addTask} />
+          <TaskList tasks={this.state.tasks} />
+          <form action="">
+            <button>Remove checked tasks</button>
+          </form>
+        </main>
+      </div>
+    );
+  };
+
+  addTask = (newTask) => {
+    this.setState((currentState) => {
+      return { tasks: [newTask, ...currentState.tasks] };
+    });
+  };
 }
 
 export default App;

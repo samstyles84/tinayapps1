@@ -12,7 +12,7 @@ Planning
 
 Setup
 
-[ ] Create your app directory (e.g. with create-react-app)
+[x] Create your app directory (e.g. with create-react-app)
 [ ] Run your app
 [ ] Ensure you have React DevTools running (in browser) [
 
