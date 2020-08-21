@@ -13,6 +13,11 @@
   }
 }
 
+.mainList {
+  list-style: none;
+  text-align: left;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 10vh;
@@ -35,4 +40,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Customize the label (the container) */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
