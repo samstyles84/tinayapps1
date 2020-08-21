@@ -18,9 +18,7 @@ class App extends React.Component {
           <br />
           <AddTask addTask={this.addTask} />
           <TaskList tasks={this.state.tasks} />
-          <form action="">
-            <button>Remove checked tasks</button>
-          </form>
+         
         </main>
       </div>
     );

@@ -43,10 +43,10 @@ class AddTask extends React.Component {
         <label htmlFor="taskName">
           Task:
           <input
-            type="text"
             onChange={this.handleChange}
-            name="taskName"
-            id="taskName"
+            type="text"
+          name="taskName"
+          id="taskName"
             value={this.state.taskName}
           />
         </label>
