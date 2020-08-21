@@ -8,16 +8,13 @@ class TaskList extends React.Component {
 
   handleClick = (clickEvent) => {
     let taskItem = clickEvent.target;
+
     if (taskItem.type === "checkbox") {
       taskItem = clickEvent.target.parentElement;
-      // if (taskItem.isChecked ===false){
-      //   taskItem.isChecked =true
-      // }
-      // else{
-      //   taskItem.isChecked = false
-      // }
-      const taskName=taskItem.id
-      this.props.toggleChecked(taskName)
+
+      const taskName = taskItem.id;
+
+      this.props.toggleChecked(taskName);
       taskItem.style.textDecoration = this.strikeThrough(
         taskItem.style.textDecoration
       );
@@ -29,8 +26,12 @@ class TaskList extends React.Component {
       <ul className="mainList">
         {this.props.tasks.map((task) => {
           return (
-            <li key={task.taskName} onClick={this.handleClick}>
-              <input type="checkbox" id="taskCheckbox" />
+            <li key={task.taskName}>
+              <input
+                type="checkbox"
+                id="taskCheckbox"
+                onClick={this.handleClick}
+              />
               {task.taskName}, due: {task.dueDate} ({task.noOfDays} days).
               Priority: {task.priority}
               <br />
