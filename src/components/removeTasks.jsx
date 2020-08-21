@@ -6,6 +6,7 @@ class RemoveTask extends React.Component {
 
 handleSubmit = (submitEvent) => {
   submitEvent.preventDefault();
+console.log(this.props.tasks)
   console.log("button pressed ====>")
 };
   render = () => {

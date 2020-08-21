@@ -1,8 +1,8 @@
-import React from "react";
-import "./App.css";
-import AddTask from "./components/addTask";
-import TaskList from "./components/taskList";
-import RemoveTask from "./components/removeTasks";
+import React from 'react';
+import './App.css';
+import AddTask from './components/addTask';
+import TaskList from './components/taskList';
+import RemoveTask from './components/removeTasks';
 class App extends React.Component {
   state = {
     tasks: [],
@@ -17,7 +17,8 @@ class App extends React.Component {
         <main>
           <br />
           <AddTask addTask={this.addTask} />
-          <TaskList tasks={this.state.tasks} />
+          <TaskList tasks={this.state.tasks} toggleChecked={this.toggleChecked}/>
+          
           <button name="saveTasks" id="saveTasks" onClick={this.saveList}>
             save
           </button>
@@ -28,14 +29,28 @@ class App extends React.Component {
           >
             removeAllTasks
           </button>
-          <RemoveTask />
+          <RemoveTask
+            tasks={this.state.tasks}
+            
+          />
         </main>
       </div>
     );
   };
+  toggleChecked = (taskToCheck) => {
+    this.setState(({ tasks }) => {
+      console.log(tasks[0].isChecked)
+      // return {
+      //   tasks: {
+      //     ...tasks,
+      //     [taskToCheck]: { ...tasks[taskToCheck], isChecked: !isChecked },
+      //   },
+      // };
+    });
+  };
 
   removeAllTasks = () => {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     localStorage.clear();
     if (tasks) {
       this.setState(() => {
@@ -44,7 +59,7 @@ class App extends React.Component {
     }
   };
   componentDidMount() {
-    const tasks = JSON.parse(localStorage.getItem("tasks"));
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     if (tasks) {
       this.setState(() => {
         return { tasks };
@@ -52,7 +67,7 @@ class App extends React.Component {
     }
   }
   saveList = () => {
-    localStorage.setItem("tasks", JSON.stringify(this.state.tasks));
+    localStorage.setItem('tasks', JSON.stringify(this.state.tasks));
   };
   addTask = (newTask) => {
     this.setState((currentState) => {

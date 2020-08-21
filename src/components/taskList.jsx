@@ -10,6 +10,14 @@ class TaskList extends React.Component {
     let taskItem = clickEvent.target;
     if (taskItem.type === "checkbox") {
       taskItem = clickEvent.target.parentElement;
+      // if (taskItem.isChecked ===false){
+      //   taskItem.isChecked =true
+      // }
+      // else{
+      //   taskItem.isChecked = false
+      // }
+      const taskName=taskItem.id
+      this.props.toggleChecked(taskName)
       taskItem.style.textDecoration = this.strikeThrough(
         taskItem.style.textDecoration
       );

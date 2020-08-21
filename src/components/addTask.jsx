@@ -6,6 +6,7 @@ class AddTask extends React.Component {
     dueDate: "",
     priority: "Medium",
     noOfDays: 0,
+    isChecked: false
   };
 
   handleSubmit = (submitEvent) => {
@@ -47,6 +48,7 @@ class AddTask extends React.Component {
             type="text"
           name="taskName"
           id="taskName"
+      
             value={this.state.taskName}
           />
         </label>
